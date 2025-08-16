@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz เพศปลอดภัย - Stop Teen Mom</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Sarabun', sans-serif;
+    background: #fff0f5;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    color: #ff6f61;
+    margin-bottom: 30px;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(135deg, #ffd6d6, #ffe0f0);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.card h2 .emoji {
+    margin-right: 8px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.btn-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Kanit', sans-serif;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn.correct-answer { background-color: #4caf50; color: white; }
+.btn.wrong-answer { background-color: #f44336; color: white; }
+
+.answer {
+    margin-top: 12px;
+    font-weight: bold;
+    display: none;
+    font-size: 16px;
+}
+
+#score-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #ffd6d6, #ffb6b9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    z-index: 100;
+}
+
+#score-popup h2 {
+    font-family: 'Kanit', sans-serif;
+    margin-bottom: 15px;
+}
+
+#score-popup button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ff6f61;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    cursor: pointer;
+    font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<h1>📝 Quiz เพศปลอดภัย - Stop Teen Mom</h1>
+<div class="quiz-container">
+
+  <!-- Question 1 -->
+  <div class="card" data-correct="true">
+    <h2><span class="emoji">🍹</span> การใช้ถุงยางอนามัยทุกครั้งช่วยป้องกันตั้งครรภ์และโรคติดต่อ?</h2>
+    <div class="btn-container">
+      <button class="btn" data-choice="true">ถูก ✅</button>
+      <button class="btn" data-choice="false">ผิด ❌</button>
+    </div>
+    <div class="answer">เฉลย: ถูก ✅</div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="card" data-correct="false">
+    <h2><span class="emoji">⏱️</span> การมีเพศสัมพันธ์ครั้งแรกจะไม่สามารถตั้งครรภ์ได้?</h2>
+    <div class="btn-container">
+      <button class="btn" data-choice="true">ถูก ✅</button>
+      <button class="btn" data-choice="false">ผิด ❌</button>
+    </div>
+    <div class="answer">เฉลย: ผิด ❌ (สามารถตั้งครรภ์ได้ทุกครั้ง)</div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="card" data-correct="true">
+    <h2><span class="emoji">💊</span> ยาคุมกำเนิดแบบเม็ดต้องกินทุกวันเวลาใกล้เคียงกัน?</h2>
+    <div class="btn-container">
+      <button class="btn" data-choice="true">ถูก ✅</button>
+      <button class="btn" data-choice="false">ผิด ❌</button>
+    </div>
+    <div class="answer">เฉลย: ถูก ✅</div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="card" data-correct="false">
+    <h2><span class="emoji">⚠️</span> การล้างภายในช่องคลอดหลังมีเพศสัมพันธ์ช่วยป้องกันตั้งครรภ์ได้?</h2>
+    <div class="btn-container">
+      <button class="btn" data-choice="true">ถูก ✅</button>
+      <button class="btn" data-choice="false">ผิด ❌</button>
+    </div>
+    <div class="answer">เฉลย: ผิด ❌</div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="card" data-correct="false">
+    <h2><span class="emoji">🚫</span> ถุงยางอนามัยควรใช้ซ้ำได้ถ้าล้างสะอาด?</h2>
+    <div class="btn-container">
+      <button class="btn" data-choice="true">ถูก ✅</button>
+      <button class="btn" data-choice="false">ผิด ❌</button>
+    </div>
+    <div class="answer">เฉลย: ผิด ❌ (ใช้ครั้งเดียวเท่านั้น)</div>
+  </div>
+<!-- Question 6 -->
+<div class="card" data-correct="false">
+  <h2><span class="emoji">🚫</span> การคุมกำเนิดแบบถอนก่อนหลั่ง ปลอดภัย 100%?</h2>
+  <div class="btn-container">
+    <button class="btn" data-choice="true">ถูก ✅</button>
+    <button class="btn" data-choice="false">ผิด ❌</button>
+  </div>
+  <div class="answer">เฉลย: ผิด ❌ (ยังมีความเสี่ยงสูง)</div>
+</div>
+
+<!-- Question 7 -->
+<div class="card" data-correct="true">
+  <h2><span class="emoji">👫</span> ทั้งผู้ชายและผู้หญิงมีสิทธิ์ปฏิเสธการมีเพศสัมพันธ์ได้?</h2>
+  <div class="btn-container">
+    <button class="btn" data-choice="true">ถูก ✅</button>
+    <button class="btn" data-choice="false">ผิด ❌</button>
+  </div>
+  <div class="answer">เฉลย: ถูก ✅</div>
+</div>
+
+<!-- Question 8 -->
+<div class="card" data-correct="true">
+  <h2><span class="emoji">⏱️</span> ยาคุมฉุกเฉินควรกินทันทีหลังมีเพศสัมพันธ์ที่ไม่ป้องกัน และไม่ควรใช้บ่อย?</h2>
+  <div class="btn-container">
+    <button class="btn" data-choice="true">ถูก ✅</button>
+    <button class="btn" data-choice="false">ผิด ❌</button>
+  </div>
+  <div class="answer">เฉลย: ถูก ✅</div>
+</div>
+
+<!-- Question 9 -->
+<div class="card" data-correct="true">
+  <h2><span class="emoji">🍹</span> การดื่มแอลกอฮอล์หรือเสพสารเสพติดเพิ่มความเสี่ยงต่อการมีเพศสัมพันธ์ที่ไม่ปลอดภัย?</h2>
+  <div class="btn-container">
+    <button class="btn" data-choice="true">ถูก ✅</button>
+    <button class="btn" data-choice="false">ผิด ❌</button>
+  </div>
+  <div class="answer">เฉลย: ถูก ✅</div>
+</div>
+
+<!-- Question 10 -->
+<div class="card" data-correct="false">
+  <h2><span class="emoji">👫</span> เพื่อนหรือคนรักมีสิทธิ์บังคับให้เรามีเพศสัมพันธ์ถ้าเป็นแฟนกัน?</h2>
+  <div class="btn-container">
+    <button class="btn" data-choice="true">ถูก ✅</button>
+    <button class="btn" data-choice="false">ผิด ❌</button>
+  </div>
+  <div class="answer">เฉลย: ผิด ❌ (เป็นการละเมิดสิทธิและเป็นความรุนแรงทางเพศ)</div>
+</div>
+</div>
+
+<div id="score-popup">
+  <h2>🎉 คุณทำแบบทดสอบเสร็จแล้ว!</h2>
+  <p id="score-text"></p>
+  <button onclick="closePopup()">ปิด</button>
+</div>
+
+<script>
+let score = 0;
+let answered = 0;
+const totalQuestions = document.querySelectorAll('.card').length;
+const popup = document.getElementById('score-popup');
+const scoreText = document.getElementById('score-text');
+
+document.querySelectorAll('.card').forEach(card => {
+    const buttons = card.querySelectorAll('.btn');
+    const correct = card.getAttribute('data-correct') === "true";
+    const answerDiv = card.querySelector('.answer');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const choice = btn.getAttribute('data-choice') === "true";
+            // ปิดการกดซ้ำ
+            buttons.forEach(b => b.disabled = true);
+
+            if(choice === correct){
+                btn.classList.add('correct-answer');
+                score++;
+            } else {
+                btn.classList.add('wrong-answer');
+                buttons.forEach(b=>{
+                    if((b.getAttribute('data-choice') === "true") === correct){
+                        b.classList.add('correct-answer');
+                    }
+                });
+            }
+            // แสดงคำตอบ
+            answerDiv.style.display = 'block';
+            answered++;
+
+            // ถ้าตอบครบ
+            if(answered === totalQuestions){
+                showScore();
+            }
+        });
+    });
+});
+
+function showScore(){
+    scoreText.innerHTML = `คุณตอบถูก ${score} / ${totalQuestions} ข้อ 🎉<br>`;
+    if(score === totalQuestions){
+        scoreText.innerHTML += "เยี่ยมมาก! คุณเข้าใจเรื่องเพศปลอดภัยอย่างดี 💖";
+    } else if(score >= totalQuestions/2){
+        scoreText.innerHTML += "ดีมาก! รู้จักปกป้องตัวเองและคนรอบข้างแล้ว อย่าหยุดเรียนรู้ ความรู้เรื่องเพศปลอดภัยช่วยชีวิตได้จริง ๆ 😉";
+    } else {
+        scoreText.innerHTML += "อย่ากังวล ลองอ่านใหม่และทำอีกครั้งนะ! 💪";
+    }
+    popup.style.display = 'block';
+}
+
+function closePopup(){
+    popup.style.display = 'none';
+}
+</script>
+ <a href="222.html">← กลับไปหน้าแรก</a>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q&A Chat Bubble แบบกดอ่าน</title>
+<style>
+body {
+    font-family: "Sarabun", sans-serif;
+    background-color: #fef6f0;
+    padding: 20px;
+}
+
+.chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.chat-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.chat-bubble {
+    padding: 12px 16px;
+    border-radius: 20px;
+    max-width: 80%;
+    word-wrap: break-word;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.question {
+    background-color: #ffe0e0;
+}
+
+.answer {
+    background-color: #d0f0c0;
+    margin-left: auto;
+    display: none; /* ซ่อนคำตอบเริ่มต้น */
+}
+
+.show-btn {
+    background-color: #ffb6b9;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 6px;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+}
+
+.show-btn:hover {
+    background-color: #ff8c8c;
+}
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+
+  <div class="chat-item">
+    <div class="chat-bubble question">
+      ❓ ถ้ารู้สึกกังวลเรื่องรักหรือร่างกาย ควรทำยังไง?
+    </div>
+    <button class="show-btn" onclick="toggleAnswer(this)">อ่านคำตอบ</button>
+    <div class="chat-bubble answer">
+      💬 พูดคุยกับผู้ใหญ่ที่ไว้ใจได้ หรือสายด่วนวัยรุ่น 📞
+    </div>
+  </div>
+
+  <div class="chat-item">
+    <div class="chat-bubble question">
+      ❓ จะทำแท้งได้ถูกกฎหมายไหม?
+    </div>
+    <button class="show-btn" onclick="toggleAnswer(this)">อ่านคำตอบ</button>
+    <div class="chat-bubble answer">
+      💬 ทำได้ตามกฎหมายไทย อายุครรภ์ ≤12 สัปดาห์ด้วยยา หรือ ≤20 สัปดาห์ หากมีปัญหาสุขภาพหรืออันตรายต่อชีวิต 🏥
+    </div>
+  </div>
+
+  <div class="chat-item">
+    <div class="chat-bubble question">
+      ❓ สายด่วนวัยรุ่นมีเบอร์อะไรบ้าง?
+    </div>
+    <button class="show-btn" onclick="toggleAnswer(this)">อ่านคำตอบ</button>
+    <div class="chat-bubble answer">
+      💬 โทร 1323 สำหรับคำปรึกษาเรื่องเพศ การตั้งครรภ์ และความสัมพันธ์ 💡
+    </div>
+  </div>
+
+  <div class="chat-item">
+    <div class="chat-bubble question">
+      ❓ ยาคุมกำเนิดแบบรายวันใช้ยังไง?
+    </div>
+    <button class="show-btn" onclick="toggleAnswer(this)">อ่านคำตอบ</button>
+    <div class="chat-bubble answer">
+      💬 รับประทานทุกวันตามเวลาที่กำหนด เพื่อป้องกันการตั้งครรภ์ 💊 ปรึกษาแพทย์หรือตัวแทนจำหน่ายเพื่อใช้อย่างถูกวิธี
+    </div>
+  </div>
+
+  <div class="chat-item">
+    <div class="chat-bubble question">
+      ❓ ถ้าแฟนไม่ยอมใช้ถุงยาง ต้องทำยังไง?
+    </div>
+    <button class="show-btn" onclick="toggleAnswer(this)">อ่านคำตอบ</button>
+    <div class="chat-bubble answer">
+      💬 คุณมีสิทธิที่จะปฏิเสธเพศสัมพันธ์จนกว่าจะปลอดภัย และควรปรึกษาเพื่อนหรือผู้ใหญ่ที่ไว้ใจได้ 🙅‍♀️
+    </div>
+  </div>
+
+  <div class="chat-item">
+    <div class="chat-bubble question">
+      ❓ การใช้ยาคุมฉุกเฉินทำให้เจ็บป่วยหรือไม่?
+    </div>
+    <button class="show-btn" onclick="toggleAnswer(this)">อ่านคำตอบ</button>
+    <div class="chat-bubble answer">
+      💬 ใช้เพียงครั้งคราวจะปลอดภัย แต่ใช้บ่อยอาจทำให้ประจำเดือนผิดปกติหรือมีผลข้างเคียง ⚠️
+    </div>
+  </div>
+
+  <div class="chat-item">
+    <div class="chat-bubble question">
+      ❓ ทำอย่างไรถ้าอยู่ในความสัมพันธ์ที่ไม่ปลอดภัย?
+    </div>
+    <button class="show-btn" onclick="toggleAnswer(this)">อ่านคำตอบ</button>
+    <div class="chat-bubble answer">
+      💬 เชื่อสัญชาตญาณตัวเอง พูดคุยกับผู้ใหญ่หรือเพื่อนที่ไว้ใจได้ และขอคำปรึกษาสายด่วนวัยรุ่นทันที 📞
+    </div>
+  </div>
+
+  <div class="chat-item">
+    <div class="chat-bubble question">
+      ❓ ถ้าอายุต่ำกว่า 18 ปี อยากขอคำปรึกษาเรื่องตั้งครรภ์ ต้องทำยังไง?
+    </div>
+    <button class="show-btn" onclick="toggleAnswer(this)">อ่านคำตอบ</button>
+    <div class="chat-bubble answer">
+      💬 สามารถไปโรงพยาบาลหรือคลินิกได้ พร้อมผู้ปกครอง หรือขอคำปรึกษาลับจากสายด่วนวัยรุ่น 1323 ได้ 🧡
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggleAnswer(button) {
+  const answer = button.nextElementSibling;
+  if (answer.style.display === "none" || answer.style.display === "") {
+    answer.style.display = "block";
+    button.textContent = "ซ่อนคำตอบ";
+  } else {
+    answer.style.display = "none";
+    button.textContent = "อ่านคำตอบ";
+  }
+}
+</script>
+ <a href="222.html">← กลับไปหน้าแรก</a>
+</body>
+</html>

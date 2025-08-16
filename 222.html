@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Teen Mom</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #FCEF91;
+      background-image: url('cute_safe_love_pattern.png');
+      background-repeat: repeat;
+      background-size: 120px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #d6336c;
+      font-size: 3em;
+      margin-top: 25px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-shadow: 2px 2px 6px rgba(255,255,255,0.95);
+    }
+
+    p {
+      color: #7a1e3a;
+      font-size: 1.25em;
+      margin: 10px auto 30px;
+      max-width: 500px;
+      font-weight: 500;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.85);
+    }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 400px;
+      margin: 0 auto 30px;
+      padding: 0 15px;
+    }
+
+    .btn {
+      padding: 18px;
+      border-radius: 16px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease-in-out;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .pink {
+      background-color: #f783ac;
+    }
+
+    .blue {
+      background-color: #7ec8e3;
+    }
+
+    /* เกร็ดความรู้ */
+    .yellow-section {
+      background-color: rgba(255, 245, 200, 0.95);
+      padding: 25px;
+      margin: 30px auto;
+      border-radius: 14px;
+      max-width: 500px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .yellow-section h2 {
+      color: #a56c00;
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.85);
+    }
+
+    .yellow-section a {
+      display: block;
+      background-color: #ffffff;
+      margin: 10px 0;
+      padding: 14px;
+      border-radius: 12px;
+      color: #a0334a;
+      font-weight: bold;
+      font-size: 1.05em;
+      text-decoration: none;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+      transition: all 0.2s ease;
+    }
+
+    .yellow-section a:hover {
+      background-color: #ffe6ee;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    /* Quiz Section */
+    .quiz-section {
+      background-color: rgba(210, 245, 255, 0.95);
+      padding: 25px;
+      margin: 30px auto;
+      border-radius: 14px;
+      max-width: 500px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .quiz-section h2 {
+      color: #00758f;
+      font-size: 1.5em;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+      margin-bottom: 10px;
+    }
+
+    .quiz-section p {
+      color: #444;
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+
+    .quiz-btn {
+      background-color: #f783ac;
+      padding: 16px 28px;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .quiz-btn:hover {
+      background-color: #ff99bb;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 480px) {
+      .button-container {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Stop Teen Mom</h1>
+  <p>รักจริงต้องใส่ใจ รักปลอดภัยต้องป้องกัน</p>
+
+  <!-- แถวแรก -->
+  <div class="button-container">
+    <button class="btn pink" onclick="goPage('knowledge.html')">ความรู้</button>
+    <button class="btn blue" onclick="goPage('consult.html')">ปรึกษา</button>
+  </div>
+
+  <!-- แถวสอง -->
+  <div class="button-container">
+    <button class="btn blue" onclick="goPage('stories.html')">มุมเรื่องจริง / ประสบการณ์</button>
+    <button class="btn pink" onclick="goPage('qa.html')">ถาม-ตอบ (Q&A)</button>
+  </div>
+
+  <!-- เกร็ดความรู้ -->
+  <div class="yellow-section">
+    <h2>เกร็ดความรู้</h2>
+    <a href="prevent.html">📌 วิธีป้องกันการตั้งครรภ์</a>
+    <a href="rights.html">📌 สิทธิ์และร่างกายของเรา</a>
+    <a href="unsafe.html">📌 สัญญาณความสัมพันธ์ที่ไม่ปลอดภัย</a>
+  </div>
+
+  <!-- เกม -->
+  <div class="quiz-section">
+    <h2>Mini Quiz</h2>
+    <p>ตอบ 10 คำถาม รู้เลยว่าคุณป้องกันถูกหรือไม่</p>
+    <button class="quiz-btn" onclick="goPage('quiz.html')">เริ่มทำแบบทดสอบ</button>
+  </div>
+
+  <script>
+    function goPage(page) {
+      window.location.href = page;
+    }
+  </script>
+
+</body>
+</html>
